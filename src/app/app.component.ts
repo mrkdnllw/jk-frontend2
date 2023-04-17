@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
-
+ 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+ selector: 'app-root',
+ template: `
+ <div class="container-md">
+   <router-outlet></router-outlet>
+ </div>
+ `
 })
-export class AppComponent {
-  title = 'angular-app-heroku';
-}
+export class AppComponent { }
