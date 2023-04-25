@@ -20,7 +20,16 @@ import { WaitlisteeService } from '../waitlistee.service';
        </thead>
  
        <tbody>
-           <tr *ngFor="let waitlistee of waitlistees$ | async">
+           <tr *ngFor="let waitlistee of waitlistees$ |paginate
+              : {
+                  itemsPerPage: tableSize,
+                  currentPage: page,
+                  totalItems: count
+                };
+          let i = index
+           
+    
+           ">
                <td>{{waitlistee.name}}</td>
                <td>{{waitlistee.email}}</td>
                <td>{{waitlistee.tag}}</td>
@@ -34,6 +43,15 @@ import { WaitlisteeService } from '../waitlistee.service';
    </table>
  
    <button class="btn btn-primary mt-3" [routerLink]="['new']">Add Waitlistee</button>
+
+   <div class="d-flex justify-content-center">
+    <pagination-controls
+      previousLabel="Prev"
+      nextLabel="Next"
+      (pageChange)="onTableDataChange($event)"
+    >
+    </pagination-controls>
+  </div>
  `
 
  
@@ -43,13 +61,24 @@ import { WaitlisteeService } from '../waitlistee.service';
 
 export class WaitlisteesListComponent implements OnInit {
 
-  waitlistees$: Observable<Waitlistee[]> = new Observable();
- 
+  //waitlistees$: Observable<Waitlistee[]> = new Observable();
+
+ // waitlistees$: Waitlistee[]> = new Observable();
+waitlistees$: any;
+
+  POSTS: any;
+  page: number = 1;
+  count: number = 0;
+  tableSize: number = 3;
+  tableSizes: any = [3, 6, 9, 12];
+
+
   constructor(private waitlisteeService: WaitlisteeService) { }
   
   ngOnInit(): void {
     this.fetchWaitlistees();
   }
+
 
   deleteWaitlistee(id: string): void {
     this.waitlisteeService.deleteWaitlistee(id).subscribe({
@@ -58,9 +87,26 @@ export class WaitlisteesListComponent implements OnInit {
   }
   
   private fetchWaitlistees(): void {
-    this.waitlistees$ = this.waitlisteeService.getWaitlistees();
+    this.waitlistees$ = this.waitlisteeService.getWaitlistees().subscribe((response) =>{
+
+      this.waitlistees$ = response;
+      
     console.log(this.waitlistees$);
+    });
+
   }
 
+  onTableDataChange(event: any) {
+    this.page = event;
+    this.fetchWaitlistees();
+  }
+  onTableSizeChange(event: any): void {
+    this.tableSize = event.target.value;
+    this.page = 1;
+    this.fetchWaitlistees();
+  }
+
+
+  
 
 }

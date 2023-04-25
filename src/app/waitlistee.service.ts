@@ -10,8 +10,8 @@ import * as dotenv from "dotenv";
 })
 export class WaitlisteeService {
 
-  private url = 'http://localhost:4000';
-  //private url = "http://jk-backend-for-ui.herokuapp.com/"
+  //private url = 'http://localhost:4000';
+  private url = "https://jk-backend-for-ui.herokuapp.com";
  //private url1 = process.env['HOST'];
  //private url = process.env['HOST1'];
 

@@ -10,6 +10,8 @@ import { WaitlisteeFormComponent } from './waitlistee-form/waitlistee-form.compo
 import { AddWaitlisteeComponent } from './add-waitlistee/add-waitlistee.component';
 import { EditWaitlisteeComponent } from './edit-waitlistee/edit-waitlistee.component'; // <-- add this line
 
+import { NgxPaginationModule } from 'ngx-pagination';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +26,8 @@ import { EditWaitlisteeComponent } from './edit-waitlistee/edit-waitlistee.compo
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule // <-- add this line
+    ReactiveFormsModule, 
+    NgxPaginationModule 
   ],
   providers: [],
   bootstrap: [AppComponent]
