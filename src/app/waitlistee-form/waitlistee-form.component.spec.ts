@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { UserFormComponent } from './user-form.component';
+import { WaitlisteeFormComponent } from './waitlistee-form.component';
 
-describe('UserFormComponent', () => {
-  let component: UserFormComponent;
-  let fixture: ComponentFixture<UserFormComponent>;
+describe('WaitlisteeFormComponent', () => {
+  let component: WaitlisteeFormComponent;
+  let fixture: ComponentFixture<WaitlisteeFormComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ UserFormComponent ]
+      declarations: [ WaitlisteeFormComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(UserFormComponent);
+    fixture = TestBed.createComponent(WaitlisteeFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

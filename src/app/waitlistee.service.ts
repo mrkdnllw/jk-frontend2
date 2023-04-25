@@ -4,12 +4,18 @@ import { Observable, Subject, tap } from 'rxjs';
 import { Waitlistee } from './waitlistee';
 import * as dotenv from "dotenv";
 
+
 @Injectable({
   providedIn: 'root'
 })
 export class WaitlisteeService {
 
   private url = 'http://localhost:4000';
+  //private url = "http://jk-backend-for-ui.herokuapp.com/"
+ //private url1 = process.env['HOST'];
+ //private url = process.env['HOST1'];
+
+
   //private url = process.env.HOST1;
 
   private waitlistees$: Subject<Waitlistee[]> = new Subject();

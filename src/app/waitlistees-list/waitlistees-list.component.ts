@@ -33,7 +33,7 @@ import { WaitlisteeService } from '../waitlistee.service';
        </tbody>
    </table>
  
-   <button class="btn btn-primary mt-3" [routerLink]="['new']">Add a New User</button>
+   <button class="btn btn-primary mt-3" [routerLink]="['new']">Add Waitlistee</button>
  `
 
  
