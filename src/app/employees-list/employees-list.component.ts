@@ -11,7 +11,7 @@ import { EmployeeService } from '../employee.service';
    <table class="table table-striped table-bordered">
        <thead>
            <tr>
-               <th>Name</th>
+               <th>Name123</th>
                <th>Position</th>
                <th>Level</th>
                <th>Action</th>
