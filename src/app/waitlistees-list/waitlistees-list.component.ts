@@ -69,7 +69,7 @@ waitlistees$: any;
   POSTS: any;
   page: number = 1;
   count: number = 0;
-  tableSize: number = 3;
+  tableSize: number = 9;
   tableSizes: any = [3, 6, 9, 12];
 
 
