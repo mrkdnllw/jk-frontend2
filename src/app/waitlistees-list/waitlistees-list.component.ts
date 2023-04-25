@@ -36,7 +36,7 @@ import { WaitlisteeService } from '../waitlistee.service';
                <td>{{waitlistee.phone}}</td>
                <td>
                    <button class="btn btn-primary me-1" [routerLink]="['edit/', waitlistee._id]">Edit</button>
-                   <button class="btn btn-danger" (click)="deleteWaitlistee(waitlistee._id || '')">Delete</button>
+                   <!-- <button class="btn btn-danger" (click)="deleteWaitlistee(waitlistee._id || '')">Delete</button> -->
                </td>
            </tr>
        </tbody>
